@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.custom_notepad.HelloController">
+   <children>
+      <MenuBar layoutY="2.0" maxHeight="-Infinity" prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu fx:id="fileMenuButton" mnemonicParsing="false" text="File">
+            <items>
+                  <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#open" text="Open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <Menu fx:id="saveMenuButton" mnemonicParsing="false" text="Save">
+                    <items>
+                      <MenuItem fx:id="saveFile" mnemonicParsing="false" onAction="#save" text="Save">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator></MenuItem>
+                        <MenuItem fx:id="saveAsFile" mnemonicParsing="false" onAction="#saveAs" text="Save As">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                           </accelerator></MenuItem>
+                    </items>
+                  </Menu>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+              <MenuItem fx:id="closeFile" mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="editMenuButton" mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#fontplus" text="Increase font size">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="EQUALS" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#fontminus" text="Decrease font size">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="MINUS" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="textArea" layoutX="-1.0" layoutY="27.0" prefHeight="372.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="25.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+   </children>
+</AnchorPane>
