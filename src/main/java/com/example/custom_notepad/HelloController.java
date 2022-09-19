@@ -29,7 +29,6 @@ public class HelloController {
     @FXML
     MenuItem closeFile;
     @FXML
-    MenuItem newWindow;
 
     FileChooser FC = new FileChooser();
 
