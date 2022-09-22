@@ -29,7 +29,6 @@ public class HelloController {
     @FXML
     MenuItem closeFile;
     @FXML
-
     FileChooser FC = new FileChooser();
 
     File path;
@@ -55,6 +54,8 @@ public class HelloController {
     public void save() throws IOException {
         if (path != null) Files.writeString(path.toPath(), textArea.getText());
         else saveAs();
+        Stage stage = (Stage) pane.getScene().getWindow();
+        stage.setTitle(path.getName()+" - Notepad");
     }
 
     public void saveAs() throws IOException {
@@ -64,6 +65,7 @@ public class HelloController {
             Files.createFile(data.toPath());
         }
         Files.writeString(data.toPath(),textArea.getText());
+        path = data;
     }
     public void close(){
         Platform.exit();
