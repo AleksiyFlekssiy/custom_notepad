@@ -17,7 +17,6 @@ public class HelloController {
 
     @FXML
     AnchorPane pane;
-
     @FXML
     TextArea textArea;
     @FXML
