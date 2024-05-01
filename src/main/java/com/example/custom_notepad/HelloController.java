@@ -74,7 +74,9 @@ public class HelloController {
         textArea.setStyle("-fx-font-size: "+fontSize+" ");
     }
     public void fontminus(){
-        fontSize--;
-        textArea.setStyle("-fx-font-size: "+fontSize+" ");
+        if (fontSize >= 10) {
+            fontSize--;
+            textArea.setStyle("-fx-font-size: "+fontSize+" ");
+        }
     }
 }
