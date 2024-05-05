@@ -5,6 +5,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -46,6 +47,7 @@
                         <KeyCodeCombination alt="UP" code="MINUS" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
+                  <MenuItem mnemonicParsing="false" onAction="#setImage" text="Change background" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Help">
@@ -60,5 +62,6 @@
             <Font size="18.0" />
          </font>
       </TextArea>
+      <ImageView fx:id="imageView" fitHeight="375.0" fitWidth="800.0" layoutY="27.0" opacity="0.6" pickOnBounds="true" />
    </children>
 </AnchorPane>

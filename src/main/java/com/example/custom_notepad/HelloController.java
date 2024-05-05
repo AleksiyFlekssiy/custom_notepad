@@ -4,6 +4,8 @@ import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -28,6 +30,8 @@ public class HelloController {
     MenuItem saveAsFile;
     @FXML
     MenuItem closeFile;
+    @FXML
+    ImageView imageView = new ImageView();
     @FXML
     FileChooser FC = new FileChooser();
 
@@ -80,5 +84,14 @@ public class HelloController {
             fontSize--;
             textArea.setStyle("-fx-font-size: "+fontSize+" ");
         }
+    }
+    public void setImage(){
+        imageView.fitWidthProperty().bind(pane.widthProperty());
+        imageView.fitHeightProperty().bind(pane.heightProperty());
+        File file = FC.showOpenDialog(null);
+        String path = file.toURI().toString();
+        System.out.println(path);
+        Image image = new Image(path);
+        imageView.setImage(image);
     }
 }
