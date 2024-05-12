@@ -10,23 +10,23 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.custom_notepad.HelloController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.aleksiyflekssiy.base.controller.MainController">
    <children>
       <MenuBar layoutY="2.0" maxHeight="-Infinity" prefHeight="25.0" prefWidth="600.0">
         <menus>
           <Menu fx:id="fileMenuButton" mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#open" text="Open">
+                  <MenuItem fx:id="openFile" mnemonicParsing="false" onAction="#openFile" text="Open">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="N" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
                   <Menu fx:id="saveMenuButton" mnemonicParsing="false" text="Save">
                     <items>
-                      <MenuItem fx:id="saveFile" mnemonicParsing="false" onAction="#save" text="Save">
+                      <MenuItem fx:id="saveFile" mnemonicParsing="false" onAction="#saveFile" text="Save">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                            </accelerator></MenuItem>
-                        <MenuItem fx:id="saveAsFile" mnemonicParsing="false" onAction="#saveAs" text="Save As">
+                        <MenuItem fx:id="saveAsFile" mnemonicParsing="false" onAction="#saveAsFile" text="Save As">
                            <accelerator>
                               <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
                            </accelerator></MenuItem>
@@ -38,16 +38,16 @@
           </Menu>
           <Menu fx:id="editMenuButton" mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#fontplus" text="Increase font size">
+              <MenuItem mnemonicParsing="false" onAction="#increaseFontSize" text="Increase font size">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="EQUALS" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator></MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#fontminus" text="Decrease font size">
+                  <MenuItem mnemonicParsing="false" onAction="#decreaseFontSize" text="Decrease font size">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="MINUS" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" onAction="#setImage" text="Change background" />
+                  <MenuItem fx:id="appear" mnemonicParsing="false" onAction="#openAppearanceWindow" text="Change background" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Help">
@@ -57,11 +57,11 @@
             </Menu>
         </menus>
       </MenuBar>
-      <TextArea fx:id="textArea" layoutX="-1.0" layoutY="27.0" prefHeight="372.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="25.0">
+      <TextArea fx:id="textArea" layoutX="-1.0" layoutY="27.0" prefHeight="372.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
          <font>
             <Font size="18.0" />
          </font>
       </TextArea>
-      <ImageView fx:id="imageView" fitHeight="375.0" fitWidth="800.0" layoutY="27.0" opacity="0.6" pickOnBounds="true" />
+      <ImageView fx:id="imageView" fitHeight="375.0" fitWidth="600.0" layoutY="27.0" opacity="0.6" pickOnBounds="true" AnchorPane.topAnchor="25.0" />
    </children>
 </AnchorPane>
